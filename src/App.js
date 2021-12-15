@@ -1,10 +1,9 @@
 import React from 'react';
-import './style.css';
+import './componente-lista.css';
 import { Lista } from './components/Lista.jsx';
 import { LineaLista } from './components/LineaLista.jsx';
 
 export default function App() {
-  const elementos = ['hola', ':)', 'hola3'];
   const elementos1 = [
     { done: false, texto: 'Elemento (Comp1)' },
     { done: true, texto: 'Elemento (Comp2)' },
@@ -21,9 +20,9 @@ export default function App() {
   return (
     <div>
       <h1>Primer componente</h1>
-      <Lista nombre="Componente 1" icono=";(" elementos={elementos} />
-      <Lista nombre="Componente 2" icono=":)" elementos={elementos} />
-      <Lista nombre="Componente 3" icono=";)" elementos={elementos} />
+      <Lista nombre="Componente 1" icono=";(" elementos={elementos2} />
+      <Lista nombre="Componente 2" icono=":)" elementos={elementos3} />
+      <Lista nombre="Componente 3" icono=";)" elementos={elementos1} />
     </div>
   );
 }
