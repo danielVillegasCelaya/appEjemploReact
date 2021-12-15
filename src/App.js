@@ -1,5 +1,16 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import './style.css';
+import { Lista } from './components/Lista.jsx';
+import { LineaLista } from './components/LineaLista.jsx';
 
-import { App } from './App';
-ReactDOM.render(<App />, document.getElementById('root'));
+export default function App() {
+  const elementos = ['hola', ':)', 'hola3'];
+
+  return (
+    <div>
+      <h1>Primer componente</h1>
+      <Lista nombre="1" elementos={elementos} />
+      <Lista nombre="2" elementos={elementos} />
+    </div>
+  );
+}
