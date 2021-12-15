@@ -1,4 +1,5 @@
 import React from 'react';
+import './componente-lista.css';
 
 export function LineaLista(props) {
   let claseLista = '';
