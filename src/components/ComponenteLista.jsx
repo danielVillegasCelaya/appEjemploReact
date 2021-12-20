@@ -4,7 +4,7 @@ import './componente-lista.css';
 
 export default function ComponenteLista(props) {
   let claseLista = '';
-  setElementClass;
+  setElementClass();
   function setElementClass() {
     props.prioridad;
     if (props.done) {
