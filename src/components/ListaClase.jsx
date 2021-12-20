@@ -6,13 +6,29 @@ class ListaClase extends React.Component{
     constructor(props){
       super(props);
 
+
+      const listaInicial = [];
+      this.state= {
+        listaInicial
+      }
+      this.ref={
+        valorTextInput,
+        valorPrioritySelect
+      }
+      this.addElement={
+        funcion
+      }
+      this.concat={
+        newLista
+      }
+
       if (this.props.elementos !== undefined) {
-        for (let i = 0; i < props.elementos.length; i++) {
+        for (let i = 0; i < this.props.elementos.length; i++) {
           listaInicial.push(
             <ComponenteListaClase
-              done={props.elementos[i].done}
-              texto={props.elementos[i].texto}
-              prioridad={props.elementos[i].prioridad}
+              done={this.props.elementos[i].done}
+              texto={this.props.elementos[i].texto}
+              prioridad={this.props.elementos[i].prioridad}
             />
           );
         }
@@ -28,14 +44,6 @@ class ListaClase extends React.Component{
         setListaComponentes(newLista);
       };
 
-      const listaInicial = [];
-      this.state= {
-        listaInicial
-      }
-      this.ref={
-        valorTextInput,
-        valorPrioritySelect
-      }
     }
 
 
@@ -64,4 +72,8 @@ class ListaClase extends React.Component{
       );
     }
 
-}
+    
+    
+
+    }
+    export default ListaClase;
