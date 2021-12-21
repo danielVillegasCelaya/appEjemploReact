@@ -44,10 +44,10 @@ class ListaClase extends React.Component {
       <div>
         {this.props.titulo} - {this.props.icono}
         <ul>
-          {state.listaComponentes}
+          {this.state.listaComponentes}
           <li>
             <input
-              ref={valorTextInput}
+              ref={this.valorTextInput}
               type="text"
               placeholder="Introduce una tarea"
             />
