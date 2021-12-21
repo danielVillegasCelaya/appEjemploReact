@@ -1,6 +1,6 @@
 import React from 'react';
 import './componente-lista.css';
-import 
+import ComponenteListaClase from './ComponenteListaClase';
 
 class ListaClase extends React.Component {
   constructor(props) {
