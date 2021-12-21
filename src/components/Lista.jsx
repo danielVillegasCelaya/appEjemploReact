@@ -14,6 +14,7 @@ export function Lista(props) {
     }
   }
 
+
   const [listaComponentes, setListaComponentes] = useState(listaInicial);
   const valorTextInput = useRef('');
   const valorPrioritySelect = useRef('');

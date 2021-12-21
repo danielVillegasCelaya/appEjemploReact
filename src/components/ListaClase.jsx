@@ -1,79 +1,68 @@
 import React from 'react';
 import './componente-lista.css';
+import 
 
-class ListaClase extends React.Component{
+class ListaClase extends React.Component {
+  constructor(props) {
+    super(props);
 
-    constructor(props){
-      super(props);
-
-
-      const listaInicial = [];
-      this.state= {
-        listaInicial
-      }
-      this.ref={
-        valorTextInput,
-        valorPrioritySelect
-      }
-      this.addElement={
-        funcion
-      }
-      this.concat={
-        newLista
-      }
-
-      if (this.props.elementos !== undefined) {
-        for (let i = 0; i < this.props.elementos.length; i++) {
-          listaInicial.push(
-            <ComponenteListaClase
-              done={this.props.elementos[i].done}
-              texto={this.props.elementos[i].texto}
-              prioridad={this.props.elementos[i].prioridad}
-            />
-          );
-        }
-      }
-
-      const funcion = function addElement() {
-        const newLista = listaComponentes.concat(
+    this.listaInicial = [];
+    this.listaComponentes = [];
+    this.valorTextInput = React.createRef();
+    this.valorPrioritySelect = React.createRef();
+    this.state = {
+      listaComponentes: this.listaInicial,
+    };
+  }
+  lista() {
+    if (this.props.elementos !== undefined) {
+      for (let i = 0; i < this.props.elementos.length; i++) {
+        this.listaInicial.push(
           <ComponenteListaClase
-            texto={valorTextInput.current.value}
-            prioridad={valorPrioritySelect.current.value}
+            done={this.props.elementos[i].done}
+            texto={this.props.elementos[i].texto}
+            prioridad={this.props.elementos[i].prioridad}
           />
         );
-        setListaComponentes(newLista);
-      };
-
+      }
     }
+  }
 
+  addElement() {
+    const newLista = this.state.listaComponentes.concat(
+      <ComponenteListaClase
+        texto={this.valorTextInput.current.value}
+        prioridad={this.valorPrioritySelect.current.value}
+      />
+    );
+    this.setState({ listaComponentes: newLista });
+  }
 
-    render(){
-      return (
-        <div>
-          {this.props.titulo} - {this.props.icono}
-          <ul>
-            {listaComponentes}
-            <li>
-              <input
-                ref={valorTextInput}
-                type="text"
-                placeholder="Introduce una tarea"
-              />
-              <br />
-              <select ref={valorPrioritySelect}>
-                <option value="alta">Prioridad Alta</option>
-                <option value="media">Prioridad Media</option>
-                <option value="baja">Prioridad Baja</option>
-              </select>
-              <button onClick={funcion}>Añadir</button>
-            </li>
-          </ul>
-        </div>
-      );
-    }
+  render() {
+    this.lista();
+    return (
+      <div>
+        {this.props.titulo} - {this.props.icono}
+        <ul>
+          {this.state.listaComponentes}
+          <li>
+            <input
+              ref={this.valorTextInput}
+              type="text"
+              placeholder="Introduce una tarea"
+            />
+            <br />
+            <select ref={this.valorPrioritySelect}>
+              <option value="alta">Prioridad Alta</option>
+              <option value="media">Prioridad Media</option>
+              <option value="baja">Prioridad Baja</option>
+            </select>
+            <button onClick={this.addElement.bind(this)}>Añadir</button>
+          </li>
+        </ul>
+      </div>
+    );
+  }
+}
 
-    
-    
-
-    }
-    export default ListaClase;
+export default ListaClase;
