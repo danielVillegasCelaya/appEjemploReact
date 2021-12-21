@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { ListaClase } from './components/ListaClase';
+import ListaClase from './components/ListaClase';
 
 export function App() {
   const elementos1 = [
